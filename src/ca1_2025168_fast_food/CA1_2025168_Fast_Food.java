@@ -4,7 +4,9 @@ import java.time.LocalDate;
 
 public class CA1_2025168_Fast_Food {
     public static void main(String[] args) {
-        FoodItem burger = new FoodItem("Burger", 250.5, LocalDate.now().plusDays(5));
-        System.out.println("Created: " + burger);
+        FoodStorage storage = new FoodStorage(8);
+        storage.addFoodItem(new FoodItem("Burger", 250, LocalDate.now().plusDays(5)));
+        storage.addFoodItem(new FoodItem("Pizza", 450, LocalDate.now().plusDays(3)));
+        storage.displayAll();
     }
 }
