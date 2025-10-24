@@ -9,6 +9,7 @@ public class CA1_2025168_Fast_Food {
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("=== Fast Food Storage System - CA1_2025168 ===");
+        System.out.println("Valid foods: Burger, Pizza, Fries, Sandwich, Hotdog");
         
         while (true) {
             System.out.println("1. Add Food Item");
@@ -21,15 +22,19 @@ public class CA1_2025168_Fast_Food {
             
             switch (choice) {
                 case "1":
-                    System.out.print("Enter food name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Enter weight (g): ");
-                    double weight = Double.parseDouble(scanner.nextLine());
-                    System.out.print("Enter best-before date (YYYY-MM-DD): ");
-                    LocalDate date = LocalDate.parse(scanner.nextLine());
-                    
-                    FoodItem item = new FoodItem(name, weight, date);
-                    storage.addFoodItem(item);
+                    try {
+                        System.out.print("Enter food name: ");
+                        String name = scanner.nextLine();
+                        System.out.print("Enter weight (g): ");
+                        double weight = Double.parseDouble(scanner.nextLine());
+                        System.out.print("Enter best-before date (YYYY-MM-DD): ");
+                        LocalDate date = LocalDate.parse(scanner.nextLine());
+                        
+                        FoodItem item = new FoodItem(name, weight, date);
+                        storage.addFoodItem(item);
+                    } catch (Exception e) {
+                        System.out.println("Error: " + e.getMessage());
+                    }
                     break;
                     
                 case "2":
