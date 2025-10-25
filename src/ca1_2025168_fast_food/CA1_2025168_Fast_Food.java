@@ -14,8 +14,9 @@ public class CA1_2025168_Fast_Food {
         while (true) {
             System.out.println("1. Add Food Item");
             System.out.println("2. Remove Food Item");
-            System.out.println("3. Display All Items");
-            System.out.println("4. Exit");
+            System.out.println("3. Peek Top Item");
+            System.out.println("4. Display All Items");
+            System.out.println("5. Exit");
             System.out.print("Choose option: ");
             
             String choice = scanner.nextLine();
@@ -42,10 +43,14 @@ public class CA1_2025168_Fast_Food {
                     break;
                     
                 case "3":
-                    storage.displayAll();
+                    storage.peekTopItem();
                     break;
                     
                 case "4":
+                    storage.displayAll();
+                    break;
+                    
+                case "5":
                     System.out.println("Goodbye!");
                     return;
                     

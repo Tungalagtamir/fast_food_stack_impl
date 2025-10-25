@@ -31,6 +31,17 @@ public class FoodStorage {
         }
     }
     
+    public FoodItem peekTopItem() {
+        if (!storage.isEmpty()) {
+            FoodItem item = storage.peek();
+            System.out.println("Top item: " + item);
+            return item;
+        } else {
+            System.out.println("Storage empty!");
+            return null;
+        }
+    }
+    
     public void displayAll() {
         System.out.println("Storage (" + storage.size() + "/" + capacity + "):");
         for (int i = storage.size() - 1; i >= 0; i--) {
