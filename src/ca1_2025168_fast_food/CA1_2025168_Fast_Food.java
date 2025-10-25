@@ -15,8 +15,9 @@ public class CA1_2025168_Fast_Food {
             System.out.println("1. Add Food Item");
             System.out.println("2. Remove Food Item");
             System.out.println("3. Peek Top Item");
-            System.out.println("4. Display All Items");
-            System.out.println("5. Exit");
+            System.out.println("4. Search Food Item");
+            System.out.println("5. Display All Items");
+            System.out.println("6. Exit");
             System.out.print("Choose option: ");
             
             String choice = scanner.nextLine();
@@ -47,10 +48,16 @@ public class CA1_2025168_Fast_Food {
                     break;
                     
                 case "4":
-                    storage.displayAll();
+                    System.out.print("Enter food name to search: ");
+                    String searchName = scanner.nextLine();
+                    storage.searchFoodItem(searchName);
                     break;
                     
                 case "5":
+                    storage.displayAll();
+                    break;
+                    
+                case "6":
                     System.out.println("Goodbye!");
                     return;
                     
